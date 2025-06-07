@@ -47,59 +47,61 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-20">
+    <div className="pt-20 bg-cyan-500 h-screen">
       <form
         onSubmit={onSubmitHandler}
-        className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-white"
+        className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-blue-950"
       >
-        <p className="text-2xl font-medium m-auto">
+        <p className="text-2xl font-medium m-auto bg-cyan-500 p-3">
           {state === "login" ? "LOGIN" : "SIGN UP"}
         </p>
+        <img
+          id="passport"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Avatar_user_enterprise.png/640px-Avatar_user_enterprise.png"
+          alt=""
+          className="w-20 mx-auto rounded-full"
+        ></img>
 
         {state === "register" && (
           <div className="w-full">
-            <p>Name</p>
             <input
               onChange={(e) => setName(e.target.value)}
               value={name}
-              placeholder="type here"
-              className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500"
+              placeholder="Name"
+              className="border border-gray-200 rounded w-full p-2 mt-1 outline-cyan-500 bg-white/30 text-white"
               type="text"
               required
             />
           </div>
         )}
         <div className="w-full ">
-          <p>Email</p>
           <input
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-            placeholder="type here"
-            className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500"
+            placeholder="Email"
+            className="border border-gray-200 rounded w-full p-2 mt-1 outline-cyan-500 bg-white/30 text-white"
             type="email"
             required
           />
         </div>
         {state === "register" && (
           <div className="w-full ">
-            <p>Date of Birth</p>
             <input
               onChange={(e) => setDate_of_birth(e.target.value)}
               value={date_of_birth}
-              placeholder="type here"
-              className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500"
+              placeholder="Date of Birth"
+              className="border border-gray-200 rounded w-full p-2 mt-1 outline-cyan-500 bg-white/30 text-white"
               type="date"
               required
             />
           </div>
         )}
         <div className="w-full ">
-          <p>Password</p>
           <input
             onChange={(e) => setPassword(e.target.value)}
             value={password}
-            placeholder="type here"
-            className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500"
+            placeholder="Password"
+            className="border border-gray-200 rounded w-full p-2 mt-1 outline-cyan-500 bg-white/30 text-white"
             type="password"
             required
           />
@@ -109,7 +111,7 @@ const Login = () => {
             Create an account?{" "}
             <span
               onClick={() => setState("register")}
-              className="text-indigo-500 cursor-pointer"
+              className="text-cyan-500 cursor-pointer"
             >
               click here
             </span>
@@ -119,13 +121,13 @@ const Login = () => {
             Already have account?{" "}
             <span
               onClick={() => setState("login")}
-              className="text-indigo-500 cursor-pointer"
+              className="text-cyan-500 cursor-pointer"
             >
               click here
             </span>
           </p>
         )}
-        <button className="bg-indigo-500 hover:bg-indigo-600 transition-all text-white w-full py-2 rounded-md cursor-pointer">
+        <button className="bg-cyan-500 hover:bg-cyan-600 transition-all text-white w-full py-2 rounded-md cursor-pointer">
           {state === "register" ? "Create Account" : "Login"}
         </button>
       </form>
